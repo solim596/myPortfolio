@@ -1,0 +1,190 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+li { list-style:none; }
+a { color:#111; }
+img { width:100%; }
+.navbar-brand { width:7rem; }
+
+/* index.html main text animation */
+#outer-div {
+    height: calc(100vh - 300px);
+}
+#demo {
+   text-transform: uppercase;
+   font-family: Late;
+   font-size: 100px;
+   color: white;
+   margin: 0;
+   border-bottom: 1px solid white;
+}
+
+#demo span {
+   display: inline-block;
+}
+
+.animated {
+   animation: customRainbow 4s infinite;
+   transition-timing-function: linear;
+}
+
+.text {
+   text-shadow-color;
+}
+
+@keyframes customRainbow {
+    0%   { text-shadow: 0px 0px 5px red; }
+    14%  { text-shadow: 0px 0px 5px orange; }
+    28%  { text-shadow: 0px 0px 5px yellow; -webkit-transform: translatey(-25px)}
+    43%  { text-shadow: 0px 0px 5px green; }
+    57% { text-shadow: 0px 0px 5px blue; }
+   71% { text-shadow: 0px 0px 5px indigo; }
+   85% { text-shadow: 0px 0px 5px violet; }
+   100% { text-shadow: 0px 0px 5px red; }
+}
+.container-fluid {
+    margin: 0 auto;
+}
+
+.profile ul li {
+    list-style: url(../img/bullet_icon.png);
+}
+
+.container-fluid {
+    margin: 0 auto;
+}
+
+/* skill bar */
+p {
+  color : black;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+.back {
+    background: none !important;
+}
+
+.skill1 {
+    background: linear-gradient(90deg, #81EBF5 0%, #31B1CF 100%);
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    border-radius: 0 20px 20px 0;
+}
+
+.skill2 {
+    background: linear-gradient(90deg, #81EBF5 0%, #31B1CF 100%);
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    border-radius: 0 20px 20px 0;
+}
+.skill3 {
+    background: linear-gradient(90deg, #ffdd80 0%, #facb4b 100%);
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    border-radius: 0 20px 20px 0;
+}
+.skill4 {
+    background: linear-gradient(90deg, #ffdd80 0%, #facb4b 100%);
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    border-radius: 0 20px 20px 0;
+}
+.skill5 {
+    background: linear-gradient(90deg, #c28cff 0%, #9333ff 100%);
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    border-radius: 0 20px 20px 0;
+}
+.skill6 {
+    background: linear-gradient(90deg, #ffb48c 0%, #ff7f3b 100%);
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    border-radius: 0 20px 20px 0;
+}
+.skill7 {
+    background: linear-gradient(90deg, #ffb48c 0%, #ff7f3b 100%);
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    border-radius: 0 20px 20px 0;
+}
+.skill8 {
+    background: linear-gradient(90deg, #ffb48c 0%, #ff7f3b 100%);
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    border-radius: 0 20px 20px 0;
+}
+.table {
+    margin: 5vw auto;
+    width:35%;
+}
+.table_b {
+    margin: 5vw auto;
+    width: 100%;
+}
+.table_s {
+    margin: 5vw auto;
+    width: 40%;
+    margin-bottom: -5vw;
+}
+/*table {
+    margin: 50px auto;
+}
+table tr {
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+}
+table tr th {
+    background-color: #eee;
+    text-align: center;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 10px;
+}
+table tr td {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 10px;
+}*/
+/* 포트폴리오 */
+.row {
+    margin: 50px auto;
+}
+.txt-area ul li {
+    font-size: 20px;
+}
+/* 인덱스 */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+  font-size: 60px;
+}
+.waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  color: #ab29f9;
+  text-transform: uppercase;
+  animation: waviy 2s infinite;
+  animation-delay: calc(.1s * var(--i));
+
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
+/* profile */
+.img_pro {
+    width: 300px;
+}

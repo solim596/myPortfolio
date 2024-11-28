@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>개발 포트폴리오</title>
+</head>
+<body>
+<div class="container my-3" layout:fragment="content">
+    <h2 class="text-center display-6 mt-5">상세내용</h2>
+    <table class="table table-striped">
+        <tr>
+            <td>번호</td>
+            <td th:text="${board.id}"></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td th:text="${board.subject}"></td>
+        </tr>
+        <tr>
+            <td>작성자</td>
+            <td><span th:if="${board.author != null}" th:text="${board.author.username}"></span></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td th:text="${board.content}"></td>
+        </tr>
+        <tr>
+            <td>작성일</td>
+            <td th:text="${board.createDate}"></td>
+        </tr>
+        <tr>
+            <td>수정 날짜</td>
+            <td th:text="${board.modifyDate}"></td>
+        </tr>
+        <tr>
+            <!-- 댓글 표시 -->
+            <td colspan="2">
+                <p class="text-end fs-6" th:text="|댓글 : ${#lists.size(board.commentList)} 개|"></p>
+                <ul class="list-group">
+                    <li th:each="comment : ${board.commentList}" class="d-flex justify-content-between list-group-item">
+                        <p th:text="${comment.content}"></p>
+                        <div>
+                            <span th:if="${comment.author != null}" th:text="${comment.author.username}"></span>
+                            <a th:href="@{|/comment/modify/${comment.id}|}" sec:authorize="isAuthenticated()" th:if="${comment.author != null and #authentication.getPrincipal().getUsername() == comment.author.username}" class="btn btn-sm btn-outline-secondary" th:text="수정"></a>
+
+                            <a href="javascript:void(0);" th:data-uri="@{|/comment/delete/${comment.id}|}" sec:authorize="isAuthenticated()" th:if="${comment.author != null and #authentication.getPrincipal().getUsername() == comment.author.username}" class="delete btn btn-sm btn-outline-secondary" th:text="삭제"></a>
+                        </div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <!-- 답글 달기 -->
+            <td colspan="2">
+                <form th:action="@{|/comment/create/${board.id}|}" method="post" th:object="${commentForm}">
+                    <textarea th:field="*{content}" name="content" id="content" rows="5" cols="100" placeholder="댓글을 작성해 주세요."></textarea>
+                    <br>
+                    <div th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="alert alert-danger fs-6" role="alert"></div>
+                    <input type="submit" value="댓글작성" class="btn btn-warning btn-sm">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="button" onclick="location.href='/board/list'" class="btn btn-sm btn-outline-secondary">목록</button>
+                <a th:href="@{|/board/modify/${id}|}" th:text="수정" class="btn btn-sm btn-outline-secondary"></a>
+                <a href="javascript:void(0);" th:data-uri="@{|/board/delete/${id}|}" th:text="삭제" class="delete btn btn-sm btn-outline-secondary"></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<script type='text/javascript' layout:fragment="script">
+    // 문서에서 클래스 이름이 "delete"인 요소를 찾아서 delete_elements변수에 저장
+    const delete_elements = document.getElementsByClassName("delete");
+
+    // delete_elements(삭제버튼)에 "click"이벤트 추가하고 삭제 버튼을 클릭하면 "정말로 삭제하시겠습니까?" 메시지 출력 후, 확인 버튼 누르면 데이터가 삭제되고, 취소 버튼을 누르면 데이터가 삭제되지 않음.
+
+    Array.from(delete_elements).forEach(function(element) {
+        element.addEventListener('click', function() {
+            if(confirm("정말로 삭제하시겠습니까?")) {
+                location.href = this.dataset.uri;
+            };
+        });
+    });
+</script>
+</body>
+</html>

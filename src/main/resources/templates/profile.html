@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>개발 포트폴리오</title>
+</head>
+<body>
+<div layout:fragment="content" class="container my-3">
+    <div class="container profile">
+        <h1 class="text-center display-6 mt-5">프로필</h1>
+        <div class="row">
+            <div class="col-sm-4 img_pro">
+                <img th:src="@{/img/me.png}" alt="me">
+            </div>
+            <div class="col-sm-8">
+                <h2>Name : DongChan SEO</h2>
+                <h2>교육과정</h2>
+                <ul>
+                    <li>과정명 : (디지털 컨버전스)JAVA, Spring 기반 데이터 융합 웹 개발자 과정 A</li>
+                    <li>교육기간 : 2024.06.24 ~ 2024.12.10</li>
+                    <li>교육내용 :  HTML5, CSS3, Javascript, Jquery, Java, MySQL, Jsp, Spring boot3</li>
+                </ul>
+                <div class="skillbr">
+                    <p class="wide">HTML 5</p>
+                    <div class="back skillbar clearfix" data-percent="80%">
+                        <div class="skill1 skillbar-bar" style="height:28px;width:0%;">80%</p></div>
+                    </div>
+
+
+                    <p class="wide">CSS 3</p>
+                    <div class="back skillbar clearfix" data-percent="85%">
+                        <div class="skill2 skillbar-bar" style="height:28px;width:0%;">85%</div>
+                    </div>
+
+
+                    <p class="wide">Javascript</p>
+                    <div class="back skillbar clearfix" data-percent="70%">
+                        <div class="skill3 skillbar-bar" style="height:28px;width:0%">70%</div>
+                    </div>
+
+
+                    <p class="wide">Jquery</p>
+                    <div class="back skillbar clearfix" data-percent="70%">
+                        <div class="skill4 skillbar-bar" style="height:28px;width:0%">70%</div>
+                    </div>
+
+                    <p class="wide">Java</p>
+                    <div class="back skillbar clearfix" data-percent="80%">
+                        <div class="skill5 skillbar-bar" style="height:28px;width:0%">80%</div>
+                    </div>
+
+                    <p class="wide">SQL</p>
+                    <div class="back skillbar clearfix" data-percent="75%">
+                        <div class="skill6 skillbar-bar" style="height:28px;width:0%">75%</div>
+                    </div>
+
+                    <p class="wide">Jsp</p>
+                    <div class="back skillbar clearfix" data-percent="65%">
+                        <div class="skill7 skillbar-bar" style="height:28px;width:0%">65%</div>
+                    </div>
+
+                    <p class="wide">Spring boot</p>
+                    <div class="back skillbar clearfix" data-percent="65%">
+                        <div class="skill8 skillbar-bar" style="height:28px;width:0%">65%</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

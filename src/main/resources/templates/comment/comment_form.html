@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container my-3" layout:fragment="content">
+    <h2 class="text-center display-6 mt-5">댓글 수정</h2>
+    <form method="post" th:object="${commentForm}">
+        <table class="table table-striped">
+            <tr>
+                <td>
+                    <input th:name="${_csrf?.parameterName}" th:value="${_csrf?.token}" type="hidden">
+                    <label>
+                        <textarea th:field="*{content}" class="form-control" rows="10"></textarea>
+                    </label>
+                    <div th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="alert alert-danger fs-6" role="alert"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="저장" class="btn-btn-primary my-2">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>신나는 개발자</title>
+</head>
+<body>
+<div class="container my-3" layout:fragment="content">
+    <h2 class="text-center display-6 mt-5">로그인</h2>
+    <form id="loginForm" method="post" th:action="@{/user/login}">
+
+        <div class="text-danger" th:if="${message}" th:text="${message}"></div>
+
+        <table class="table">
+            <tr>
+                <td>사용자 아이디</td>
+                <td>
+                    <input class="form-control" id="username" name="username" type="text">
+                    <div class="text-danger" id="usernameError"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td>
+                    <input class="form-control" id="password" name="password" type="password">
+                    <div class="text-danger" id="passwordError"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" colspan="2">
+                    <button class="btn btn-primary" onclick="valfn()" type="button">로그인</button>
+                    <button class="btn btn-outline-secondary" onclick="location.href='/user/signup'" type="button">
+                        회원가입
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script layout:fragment="script" type="text/javascript">
+    function valfn(){
+      let form = $("#loginForm");
+      let username = $("#username").val();
+      let password = $("#password").val();
+      //오류 메시지 표시하는 영역 초기화
+      $("#username").text("");
+      $("#password").text("");
+      //만약 username이 true가 아니면 에러 메시지 표시
+      if(!username){
+        $("#usernameError").text("사용자 아이디를 입력해 주세요.");
+        return false;
+      }
+      //만약 password가 true가 아니면 에러 메시지 표시
+      if(!password){
+        $("#passwordError").text("비밀번호를 입력해 주세요.");30
+        return false;
+      }
+
+      // AJAX로 서버에 아이디 존재 여부 확인 요청
+      $.ajax({
+        url: '/user/username_exists',
+        type: 'get',
+        data: { username:username },
+        success: function(response) {
+            if(!response) {
+                alert("일치하는 사용자 정보가 없습니다.");
+            } else {
+                form.submit();
+            }
+        },
+        error : function() {
+            alert("서버 오류");
+        }
+      });
+    }
+</script>
+</body>
+</html>

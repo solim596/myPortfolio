@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>개발 포트폴리오</title>
+</head>
+<body>
+<div class="container my-3" layout:fragment="content">
+    <h1 class="text-center display-6 mt-5">포트폴리오</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <img alt="포트폴리오" th:src="@{/img/pp1.png}">
+        </div>
+        <div class="col-sm-6 txt-area">
+            <h2>1. 쿨젠컴퓨터</h2>
+            <ul class="list-group">
+                <li class="list-group-item">홈페이지 리뉴얼(PC + mobile)</li>
+                <li class="list-group-item">원본 : 쿨젠 컴퓨터(https://www.coolzen.co.kr/)</li>
+                <li class="list-group-item">벤치마킹 : 엘르(https://www.elle.co.kr/)</li>
+                <li class="list-group-item">Skill : HTML5 + CSS3 + JQuery</li>
+                <li class="list-group-item">통합개발환경(IDE) : Visual Studio code</li>
+                <li class="list-group-item">가발기간 : 약 2주</li>
+            </ul>
+            <button class="btn btn-info" onclick="location.href='http://mmlp3978.dothome.co.kr/coolzencom/'"
+                    type="button">바로가기
+            </button>
+            <a class="link-primary" download th:href="@{/pdf/coolzen.pdf}">기획서 다운로드</a>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-6">
+            <img alt="포트폴리오" th:src="@{/img/pp2.png}">
+        </div>
+        <div class="col-sm-6 txt-area">
+            <h2>2. 뉴욕버거</h2>
+            <ul class="list-group">
+                <li class="list-group-item">홈페이지 리뉴얼(PC + mobile)</li>
+                <li class="list-group-item">원본 : 뉴욕버거(https://www.newyorkburger.co.kr/bbs/)</li>
+                <li class="list-group-item">벤치마킹 : 탭코리아(https://tapkorea.kr/)</li>
+                <li class="list-group-item">Skill : HTML5 + CSS3 + JQuery</li>
+                <li class="list-group-item">통합개발환경(IDE) : Visual Studio code</li>
+                <li class="list-group-item">가발기간 : 약 2주</li>
+            </ul>
+            <button class="btn btn-info" onclick="location.href='https://solim596.github.io/newyorkBurger/'"
+                    type="button">바로가기
+            </button>
+            <a class="link-primary" download th:href="@{/pdf/newyorkburger.pdf}">기획서 다운로드</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <img alt="포트폴리오" th:src="@{/img/pp3.png}">
+        </div>
+        <div class="col-sm-6 txt-area">
+            <h2>3. 마니도서</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Back-End 홈페이지 (PC버전)</li>
+                <li class="list-group-item">원본 : 동아출판(https://www.bookdonga.com/main.donga)</li>
+                <li class="list-group-item">Skill : JSP + CSS3 + JQuery</li>
+                <li class="list-group-item">통합개발환경(IDE) : Eclipse</li>
+                <li class="list-group-item"> 기능 : 회원가입, 로그인, 게시판, 장바구니, 상품등록</li>
+                <li class="list-group-item">가발기간 : 약 2주</li>
+            </ul>
+            <button class="btn btn-info" onclick="location.href='#'" type="button">바로가기</button>
+            <a class="link-primary" download th:href="@{/pdf/book.pdf}">기획서 다운로드</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <img alt="포트폴리오" th:src="@{/img/pp4.png}">
+        </div>
+        <div class="col-sm-6 txt-area">
+            <h2>4. 쿠팡 홈페이지</h2>
+            <ul class="list-group">
+                <li class="list-group-item">홈페이지 리뉴얼 메인1, 서브1 (PC버전, Mobile버전)</li>
+                <li class="list-group-item">원본 : 이마트24(https://www.emart24.co.kr/)</li>
+                <li class="list-group-item">Skill : HTML + CSS3 + JQuery</li>
+                <li class="list-group-item">통합개발환경(IDE) : Visual Studio Code</li>
+                <li class="list-group-item">가발기간 : 약 3주</li>
+            </ul>
+            <button class="btn btn-info" onclick="location.href='https://solim596.github.io/coupang/'" type="button">바로가기</button>
+            <a class="link-primary" download th:href="@{/pdf/coupang.pdf}">기획서 다운로드</a>
+        </div>
+    </div>
+
+
+<!--    <div class="row">-->
+<!--        <div class="col-sm-6">-->
+<!--            <img alt="포트폴리오" th:src="@{/img/pp4.png}">-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 txt-area">-->
+<!--            <h2>4. 의류 쇼핑몰</h2>-->
+<!--            <ul class="list-group">-->
+<!--                <li class="list-group-item">Back-End 홈페이지 (PC버전)</li>-->
+<!--                <li class="list-group-item">Crawling(크롤링) : 동아출판(https://www.bookdonga.com/main.donga)</li>-->
+<!--                <li class="list-group-item">Skill : JSP + CSS3 + JQuery</li>-->
+<!--                <li class="list-group-item">통합개발환경(IDE) : IntelliJ Community 버전</li>-->
+<!--                <li class="list-group-item"> 기능 : 회원가입, 로그인, 게시판, 장바구니, 상품등록</li>-->
+<!--                <li class="list-group-item">가발기간 : 약 3주</li>-->
+<!--            </ul>-->
+<!--            <button class="btn btn-info" onclick="location.href='#'" type="button">바로가기</button>-->
+<!--            <a class="link-primary" download th:href="@{/pdf/book.pdf}">기획서 다운로드</a>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
+</body>
+</html>

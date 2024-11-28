@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+  <link rel="shortcut icon" th:href="@{/img/favicon.png}">
+  <title>신나는 개발자</title>
+</head>
+<body>
+  <nav th:replace="~{navbar :: navbarFragment}"></nav>
+  <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+  <th:block layout:fragment="content"></th:block>
+
+  <footer th:replace="~{footer :: footerFragment}"></footer>
+  <!-- 기본 템플릿 안에 삽입될 내용 End -->
+  <!-- jQuery JS -->
+  <script th:src="@{/js/jquery-3.7.1.js}"></script>
+  <!-- Bootstrap JS -->
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+
+  <!-- 자바스크립트 start -->
+  <th:block layout:fragment="script"></th:block>
+
+  <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
